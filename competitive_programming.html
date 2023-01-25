@@ -1,34 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Competitive Programming</title>
-</head>
-<body>
+  </head>
+  <body>
+    <a href="index.html">Home</a>
     <h1>Competitive Programming</h1>
-    <h2>Bubble Sort</h2>
-    <p>
-        bubble sort is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted. The algorithm, which is a comparison sort, is named for the way smaller or larger elements "bubble" to the top of the list.
-    </p>
-    <p>Algorithm:</p>
-    <ol>
-        <li>Start at the beginning of the array.</li>
-        <li>Compare the first and second elements. If the first is greater than the second, swap them.</li>
-        <li>Compare the second and third elements. If the second is greater than the third, swap them.</li>
-        <li>Continue this way until the end of the array is reached.</li>
-        <li>Repeat steps 1-4 until the array is sorted.</li>
-    </ol>
-    <p>C code:</p>
+    <p>Bubble sort is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed.</p>
+    
+    <h2>Bubble Sort Algorithm</h2>
     <pre>
-void bubble_sort(int arr[], int n) 
-{ 
-   int i, j; 
-   for (i = 0; i < n-1; i++)       
-  
-       // Last i elements are already in place    
-       for (j = 0; j < n-i-1; j++)  
-           if (arr[j] > arr[j+1]) 
-              swap(&arr[j], &arr[j+1]); 
-} 
+      <code>
+        void bubble_sort(int arr[], int n) {
+          int i, j;
+          for (i = 0; i < n-1; i++) {
+            for (j = 0; j < n-i-1; j++) {
+              if (arr[j] > arr[j+1]) {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+              }
+            }
+          }
+        }
+      </code>
     </pre>
-</body>
+  </body>
 </html>
