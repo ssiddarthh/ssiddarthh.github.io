@@ -28,13 +28,31 @@ char *strtok(char *str, const char *delim) {
 	
 		<h1>Swap Code</h1>
 	<pre>
-void my_swap(void *ptr,int size){ 	// Function definition with 2 formal parameters
+void my_swap(void *ptr,int n){ 	// Function definition with 2 formal parameters
     char temp;		// Initializing a character variable to temporarily store variable
-    for(int i=0;i<size/2;i++){		// For loop to swap the variables with respect to size
+    for(int i=0;i<n/2;i++){		// For loop to swap the variables with respect to size
         temp=*((char *)ptr+i);		
-        *((char *)ptr+i)=*((char *)ptr+(size-(i+1))); 
-        *((char *)ptr+(size-(i+1)))= temp; 
+        *((char *)ptr+i)=*((char *)ptr+(n-(i+1))); 
+        *((char *)ptr+(n-(i+1)))= temp; 
 
+    }
+}
+	</pre>
+	
+	
+		
+	<h1>Bubble sort Code</h1>
+	<pre>
+void bubble_sort(int arr[], int n) {
+    int i, j, temp;
+    for (i = 0; i < n-1; i++) {
+        for (j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
     }
 }
 	</pre>
