@@ -25,5 +25,18 @@ char *strtok(char *str, const char *delim) {
     return str;
 }
 	</pre>
+	
+		<h1>Swap Code</h1>
+	<pre>
+void my_swap(void *ptr,int size){ 	// Function definition with 2 formal parameters
+    char temp;		// Initializing a character variable to temporarily store variable
+    for(int i=0;i<size/2;i++){		// For loop to swap the variables with respect to size
+        temp=*((char *)ptr+i);		
+        *((char *)ptr+i)=*((char *)ptr+(size-(i+1))); 
+        *((char *)ptr+(size-(i+1)))= temp; 
+
+    }
+}
+	</pre>
 </body>
 </html>
