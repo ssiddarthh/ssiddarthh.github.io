@@ -28,17 +28,34 @@ char *strtok(char *str, const char *delim) {
 }
 	</pre>
 	
-		<h1>Swap Code</h1>
+		<h1>Variadic Function</h1>
 	<pre>
-void my_swap(void *ptr,int n){
-    char temp;
-    for(int i=0;i<n/2;i++){
-        temp=*((char *)ptr+i);		
-        *((char *)ptr+i)=*((char *)ptr+(n-(i+1))); 
-        *((char *)ptr+(n-(i+1)))= temp; 
+#include <stdio.h>
+#include <stdarg.h>
 
-    }
+int max_number(int count,...);
+
+int main(void) {
+	
+	printf("%d", max_number(4,1,56,8,2) );
+	
 }
+
+int max_number(int count,...) {
+	int next;
+	va_list p;
+	va_start(p, count);
+	int largest = va_arg(p,int);
+	for(int i=0; i<count; i++) {
+		next = va_arg(p,int);
+		if(largest < next ) {
+			largest = next;
+		}
+	}
+	va_end(p);
+	return largest;
+}
+
 	</pre>
 	
 	
